@@ -1,0 +1,47 @@
+<div class="mat-elevation-z8">
+  <mat-toolbar style="background-color:rgb(241, 218, 87);" >
+    <span>Informacion De Curso del Docente</span>
+    <div class="example-spacer"></div>
+   
+  </mat-toolbar>
+  <div class="container">
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">ID Docente</th>
+          <th scope="col">ID Curso</th>
+          <th scope="col">Status</th>
+          <th scope="col">Fecha de Inicio</th>
+          <th scope="col">Fecha de Fin</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let modelo of ListarModelos">
+          <th>{{modelo.id}}</th>
+          <td>{{modelo.id_docente}}</td>
+          <td>{{modelo.id_curso}}</td>
+          <td>{{modelo.status}}</td>
+          <td>{{modelo.fecha_inicio}}</td>
+          <td>{{modelo.fecha_fin}}</td>
+          
+          <td>
+           
+            <button (click)="modificar(modelo.id)" type="button" class="btn btn-info">Editar</button>
+          </td>
+          <td>
+            <button (click)="eliminar(modelo.id)" type="button" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+    <button type="button" class="btn btn-info" (click)="Onnuevo()">AgregarPersona</button>
+
+  </div>
+
+
